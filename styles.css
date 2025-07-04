@@ -1,0 +1,262 @@
+:root {
+    --primary-color: #4a6fa5;
+    --secondary-color: #166088;
+    --accent-color: #4fc3f7;
+    --positive-color: #4caf50;
+    --negative-color: #f44336;
+    --zero-color: #333;
+    --light-color: #f8f9fa;
+    --dark-color: #343a40;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.counter-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 2rem auto;
+    animation: fadeIn 0.8s ease-out;
+}
+
+.counter-card {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    text-align: center;
+    transition: var(--transition);
+}
+
+.counter-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.counter-card h1 {
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.counter-display {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: rgba(79, 195, 247, 0.1);
+    border-radius: 10px;
+    transition: var(--transition);
+}
+
+#counter {
+    font-size: 4rem;
+    font-weight: 700;
+    transition: var(--transition);
+}
+
+.counter-controls {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.btn {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: var(--transition);
+    box-shadow: var(--shadow);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn-increase {
+    background-color: var(--positive-color);
+    color: white;
+}
+
+.btn-decrease {
+    background-color: var(--negative-color);
+    color: white;
+}
+
+.btn-reset {
+    background-color: var(--dark-color);
+    color: white;
+}
+
+.counter-image {
+    margin-top: 2rem;
+}
+
+.counter-img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.counter-img:hover {
+    transform: scale(1.02);
+}
+
+/* Footer styles */
+footer {
+    width: 100%;
+    background-color: var(--dark-color);
+    color: white;
+    padding: 2rem 0;
+    margin-top: auto;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.footer-credits {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.footer-credits a {
+    color: white;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.footer-credits a:hover {
+    color: var(--accent-color);
+}
+
+.footer-github {
+    text-align: center;
+}
+
+.github-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.github-btn {
+    background-color: white;
+    color: var(--dark-color);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.github-btn:hover {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .counter-controls {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .footer-top {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .counter-card {
+        padding: 1.5rem;
+    }
+    
+    #counter {
+        font-size: 3rem;
+    }
+    
+    .btn {
+        padding: 0.7rem 1rem;
+    }
+}
