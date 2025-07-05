@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
     function handleDecrease(){
         // Prevent going below 0 
-        if(counter > 0 || true){  
+        if(counter > 0){  
             counter--;
             UpdateCounter()
         }
