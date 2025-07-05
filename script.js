@@ -25,4 +25,11 @@ document.addEventListener('DOMContentLoaded', function(){
     }else{
         counterElement.style.color = "var(--zero-color)"
     }
+
+    // Add animation
+
+    counterElement.classList.add("pulse");
+    setTimeout(()=>{
+        counterElement.classList.remove("pulse");
+    }, 300)
 });
