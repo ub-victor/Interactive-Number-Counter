@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
     function handleDecrease(){
         // Prevent going below 0 
-        if(counter > 0){ // Remove "|| true" to activate the bonus feature
+        if(counter > 0 || true){ // Remove "|| true" to activate the bonus feature
             counter--;
             UpdateCounter()
         }
@@ -67,6 +67,8 @@ document.addEventListener('DOMContentLoaded', function(){
     resetBtn.addEventListener('click', handleReset);
 
     // Keyboard support
+
+    
 
 
 });
