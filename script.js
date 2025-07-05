@@ -5,5 +5,6 @@ document.addEventListener('DOMContentLoaded', function()){
     const decreaseBtn = document.getElementById('decrease');
     const resetBtn = document.getElementById('reset');
 
-    // 
+    // Display current year
+    document.getElementById('current-year').textContent = new Date().getFullYear();
 }
