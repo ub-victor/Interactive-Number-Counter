@@ -14,22 +14,26 @@ document.addEventListener('DOMContentLoaded', function(){
     // Update counter display
     function UpdateCounter(){
         counterElement.textContent = counter
-    }
+    
 
     // Change color based on value
 
-    if(counter > 0){
-        counterElement.style.color = "var(--positive-color)";
-    }else if (counter < 0){
-        counterElement.style.color = "var(--negative-color)";
-    }else{
-        counterElement.style.color = "var(--zero-color)"
+        if(counter > 0){
+            counterElement.style.color = "var(--positive-color)";
+        }else if (counter < 0){
+            counterElement.style.color = "var(--negative-color)";
+        }else{
+            counterElement.style.color = "var(--zero-color)"
+        }
+
+        // Add animation
+
+        counterElement.classList.add("pulse");
+        setTimeout(()=>{
+            counterElement.classList.remove("pulse");
+        }, 300);
+
     }
 
-    // Add animation
 
-    counterElement.classList.add("pulse");
-    setTimeout(()=>{
-        counterElement.classList.remove("pulse");
-    }, 300)
 });
