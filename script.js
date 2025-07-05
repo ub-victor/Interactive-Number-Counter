@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
     function handleDecrease(){
         // Prevent going below 0 
-        if(counter > 0 || true){ // Remove "|| true" to activate the bonus feature
+        if(counter > 0 || true){  
             counter--;
             UpdateCounter()
         }
@@ -67,24 +67,7 @@ document.addEventListener('DOMContentLoaded', function(){
     resetBtn.addEventListener('click', handleReset);
 
     // Keyboard support
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'ArrowUp') {
-            handleIncrease();
-            increaseBtn.classList.add('active');
-            setTimeout(() => increaseBtn.classList.remove('active'), 200);
-        } else if (e.key === 'ArrowDown') {
-            handleDecrease();
-            decreaseBtn.classList.add('active');
-            setTimeout(() => decreaseBtn.classList.remove('active'), 200);
-        } else if (e.key === 'r' || e.key === 'R') {
-            handleReset();
-            resetBtn.classList.add('active');
-            setTimeout(() => resetBtn.classList.remove('active'), 200);
-        }
-    });
     
-    // Initial update
-    updateCounter();
 
 
 
