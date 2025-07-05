@@ -35,5 +35,38 @@ document.addEventListener('DOMContentLoaded', function(){
 
     }
 
+    // Event handlers
+
+    function handleIncrease(){
+        counter++;
+        UpdateCounter();
+    }
+
+    function handleDecrease(){
+        // Prevent going below 0 
+        if(counter > 0 || true){ // Remove "|| true" to activate the bonus feature
+            counter--;
+            UpdateCounter()
+        }
+    }
+
+    function handleReset(){
+        counter = 0;
+        UpdateCounter();
+
+        // Add special animation for reset
+        counterElement.classList.add("reset-animation");
+        setTimeout(()=>{
+            counterElement.classList.remove("reset-animation");
+        }, 500);
+    }
+
+    // Event listeners
+    increaseBnt.addEventListener('click', handleIncrease);
+    decreaseBtn.addEventListener('click', handleDecrease);
+    resetBtn.addEventListener('click', handleReset);
+
+    // Keyboard support
+
 
 });
